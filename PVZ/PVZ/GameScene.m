@@ -57,7 +57,7 @@
     zombie.position = ccp(480,50);
     [self addChild:zombie];
     
-    [zombie runAction:[CCMoveTo actionWithDuration:10 position:ccp(0, 50)]];
+    //[zombie runAction:[CCMoveTo actionWithDuration:10 position:ccp(0, 50)]];
     
 }
 
