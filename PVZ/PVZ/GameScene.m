@@ -47,7 +47,7 @@
 {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"zombies_type.plist"];
     
-    CCAnimation* anim = [CCAnimation animationWithFile:@"zombie0"                             
+    CCAnimation* anim = [CCAnimation animationWithFile:@"zombie"                             
                                             frameCount:22 
                                                  delay:0.08f];
     CCAnimate* animate = [CCAnimate actionWithAnimation:anim]; 

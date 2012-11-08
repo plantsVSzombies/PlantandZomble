@@ -34,20 +34,44 @@
 }
 
 // Creates an animation from sprite frames.
+//+(CCAnimation*) animationWithFrame:(NSString*)frame frameCount:(int)frameCount delay:(float)delay
+//{
+//	// load the ship's animation frames as textures and create a sprite frame
+//	NSMutableArray* frames = [NSMutableArray arrayWithCapacity:frameCount];
+//	for (int i = 0; i < frameCount; i++)
+//	{
+//		NSString* file = [NSString stringWithFormat:@"%@%i.png", frame, i];
+//		CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
+//		CCSpriteFrame* frame = [frameCache spriteFrameByName:file];
+//		[frames addObject:frame];
+//	}
+//	
+//	// return an animation object from all the sprite animation frames
+//	return [CCAnimation animationWithSpriteFrames:frames delay:delay];
+//}
 +(CCAnimation*) animationWithFrame:(NSString*)frame frameCount:(int)frameCount delay:(float)delay
 {
 	// load the ship's animation frames as textures and create a sprite frame
 	NSMutableArray* frames = [NSMutableArray arrayWithCapacity:frameCount];
-	for (int i = 0; i < frameCount; i++)
+	for (int i = 1; i < frameCount; i++)
 	{
-		NSString* file = [NSString stringWithFormat:@"%@%i.png", frame, i];
-		CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-		CCSpriteFrame* frame = [frameCache spriteFrameByName:file];
-		[frames addObject:frame];
+        if(i<10)
+        {
+		    NSString* file = [NSString stringWithFormat:@"%@00%i.png", frame, i];
+            CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
+            CCSpriteFrame* frame = [frameCache spriteFrameByName:file];
+            [frames addObject:frame];
+        }
+        else
+        {
+            NSString* file = [NSString stringWithFormat:@"%@0%i.png", frame, i]; 
+            CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
+            CCSpriteFrame* frame = [frameCache spriteFrameByName:file];
+            [frames addObject:frame];
+        }
 	}
 	
 	// return an animation object from all the sprite animation frames
 	return [CCAnimation animationWithSpriteFrames:frames delay:delay];
 }
-
 @end
