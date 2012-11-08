@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Plant.h"
+#import "Zombies.h"
+#import "Bullet.h"
 
 @interface GameScene : CCLayer {
-    
+    CCSprite * backGround;
 }
+@property(nonatomic,retain)CCSprite * backGround;
 +(CCScene *) scene;
 
 @end

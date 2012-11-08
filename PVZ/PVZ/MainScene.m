@@ -77,7 +77,7 @@
     NSLog(@"start...");
     CCTransitionProgressRadialCW *jumoZoom = [CCTransitionProgressRadialCW transitionWithDuration:1 scene:[GameScene scene]];
 
-    [[CCDirector sharedDirector] replaceScene:jumoZoom];
+    [[CCDirector sharedDirector] pushScene:jumoZoom];
 }
 - (void) dealloc
 {
